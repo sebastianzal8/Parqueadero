@@ -317,7 +317,20 @@ public class Parqueadero {
      * @return Respuesta 1.
      */
     public String metodo1() {
-        return "respuesta 1";
+
+        String respuesta1 = "";
+        int tiempo=0;
+
+        for (int i =0; i<puestos.length; i++){
+            if (puestos[i].estaOcupado()&&puestos[i].darCarro().darTiempoEnParqueadero(horaActual)>=tiempo){
+                tiempo = puestos[i].darCarro().darTiempoEnParqueadero(horaActual);
+                respuesta1 = puestos[i].darCarro().darPlaca();
+            }
+
+        }
+        return respuesta1;
+
+
     }
 
     /**
