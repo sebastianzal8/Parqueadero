@@ -266,7 +266,12 @@ public class Parqueadero {
      * Si la hora actual es igual a la hora de cierre, el parqueadero se cierra.
      */
     public void avanzarHora() {
-        horaActual++;
+        if (horaActual<HORA_CIERRE){
+            horaActual++;
+        }else if (horaActual==HORA_CIERRE){
+            abierto = false;
+        }
+
     }
 
     /**
