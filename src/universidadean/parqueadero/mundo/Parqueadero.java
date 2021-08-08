@@ -318,7 +318,7 @@ public class Parqueadero {
      */
     public String metodo1() {
 
-        String respuesta1 = "";
+        String respuesta1 = "Parqueadero vacio";
         int tiempo=0;
 
         for (int i =0; i<puestos.length; i++){
@@ -339,7 +339,13 @@ public class Parqueadero {
      * @return Respuesta 2.
      */
     public String metodo2() {
-        return "respuesta 2";
+        String respuesta2 = "";
+        if (calcularPuestosLibres()!=0){
+            respuesta2 = "Hay puestos disponibles";
+        }else{
+            respuesta2 = "El parqueadero está lleno";
+        }
+        return respuesta2;
     }
 
 }
